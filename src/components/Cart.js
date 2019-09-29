@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Summary from "../components/Summary";
 import {
   addQuantity,
   subtractQuantity,
@@ -75,6 +76,7 @@ class Cart extends Component {
           <h5>You have Ordered:</h5>
           <ul className="collection">{addedItems}</ul>
         </div>
+        <Summary></Summary>
       </div>
     );
   }

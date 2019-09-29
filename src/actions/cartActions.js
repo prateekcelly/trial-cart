@@ -2,7 +2,9 @@ import {
   ADD_TO_CART,
   REMOVE_ITEM,
   SUB_QUANTITY,
-  ADD_QUANTITY
+  ADD_QUANTITY,
+  ADD_SHIPPING,
+  SUB_SHIPPING
 } from "../actions/action-types/cart-actions";
 
 export const addToCart = id => {
@@ -30,5 +32,17 @@ export const subtractQuantity = id => {
   return {
     type: SUB_QUANTITY,
     id
+  };
+};
+
+export const addShipping = () => {
+  return {
+    type: ADD_SHIPPING
+  };
+};
+
+export const subtractShipping = () => {
+  return {
+    type: SUB_SHIPPING
   };
 };

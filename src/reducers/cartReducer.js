@@ -8,7 +8,9 @@ import {
   ADD_TO_CART,
   ADD_QUANTITY,
   SUB_QUANTITY,
-  REMOVE_ITEM
+  REMOVE_ITEM,
+  ADD_SHIPPING,
+  SUB_SHIPPING
 } from "../actions/action-types/cart-actions";
 
 const initState = {
@@ -87,7 +89,7 @@ const cartReducer = (state = initState, action) => {
         };
       }
     case ADD_QUANTITY:
-      var addedItem = state.items.find(item => item.id === action.id);
+      addedItem = state.items.find(item => item.id === action.id);
       addedItem.quantity += 1;
       var newTotal = state.total + addedItem.price;
       return {
@@ -95,7 +97,7 @@ const cartReducer = (state = initState, action) => {
         total: newTotal
       };
     case SUB_QUANTITY:
-      var addedItem = state.items.find(item => item.id === action.id);
+      addedItem = state.items.find(item => item.id === action.id);
       if (addedItem.quantity === 1) {
         let newItems = state.addedItems.filter(item => item.id !== action.id);
         let newTotal = state.total - addedItem.price;
@@ -115,10 +117,22 @@ const cartReducer = (state = initState, action) => {
     case REMOVE_ITEM:
       var itemToRemove = state.addedItems.find(item => item.id === action.id);
       var new_items = state.addedItems.filter(item => item.id !== action.id);
-      var newTotal = state.total - itemToRemove.quantity * itemToRemove.price;
+      newTotal = state.total - itemToRemove.quantity * itemToRemove.price;
       return {
         ...state,
         addedItems: new_items,
+        total: newTotal
+      };
+    case ADD_SHIPPING:
+      newTotal = state.total + 6;
+      return {
+        ...state,
+        total: newTotal
+      };
+    case SUB_SHIPPING:
+      newTotal = state.total - 6;
+      return {
+        ...state,
         total: newTotal
       };
     default:
