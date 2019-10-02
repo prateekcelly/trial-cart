@@ -8,7 +8,6 @@ class Summary extends Component {
   }
   handleChecked = e => {
     if (e.target.checked) {
-      console.log("hello");
       this.props.addShipping();
     } else {
       this.props.subtractShipping();

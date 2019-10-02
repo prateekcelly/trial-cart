@@ -26,7 +26,6 @@ class Cart extends Component {
             <div className="item-img">
               <img src={item.img} alt={item.img} className="" />
             </div>
-
             <div className="item-desc">
               <span className="title">{item.title}</span>
               <p>{item.desc}</p>
@@ -68,7 +67,7 @@ class Cart extends Component {
         );
       })
     ) : (
-      <p>Nothing.</p>
+      <p>Oops! Looks like your cart is empty.</p>
     );
     return (
       <div className="container">

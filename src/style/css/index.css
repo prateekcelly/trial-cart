@@ -10,7 +10,7 @@
 .card {
   width: 300px;
 }
-.card .card-image .card-title {
+.card .card-image .card-title .card-content {
   color: black;
   font-weight: 400;
 }
@@ -33,4 +33,60 @@
 }
 .item-desc {
   align-self: center;
+}
+
+.item-image {
+  float: left;
+  height: 100%;
+  width: 100%;
+  padding-left: 5%;
+  padding-top: 5%;
+  margin-right: 5%;
+  margin-left: 5%;
+  padding-bottom: 5%;
+  margin-left: calc(-50vw + 50% - 8px);
+}
+
+.item-info {
+  float: left;
+  height: 100%;
+  width: 100%;
+  padding-left: 5%;
+  padding-top: 2%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.details {
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+  float: left;
+  display: flex;
+  border-bottom: 2px solid grey;
+}
+
+.item-header {
+  border-bottom: 1px solid grey;
+}
+
+.buynow {
+  margin-top: 10%;
+  padding: 5%;
+  display: block;
+  width: 100%;
+  color: white;
+  font-size: 150%;
+}
+
+.btn-color {
+  background-color: #ee6e73;
+}
+
+.btn-color:hover {
+  background-color: red;
+}
+
+.btn-color:focus {
+  background-color: #ee6e73;
 }
